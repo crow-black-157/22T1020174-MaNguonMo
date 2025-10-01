@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - <%= data.name %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="<%= data.avatar %>" alt="Avatar" class="avatar">
+                <div class="contact-info">
+                    <p><i class="fas fa-calendar-alt"></i> <%= data.dob %></p>
+                    <p><i class="fas fa-phone"></i> <%= data.phone %></p>
+                    <p><i class="fas fa-envelope"></i> <%= data.email %></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <%= data.address %></p>
+                </div>
+            </div><br>
+            <div class="section">
+                <h3>Học vấn</h3>
+                <h4><%= data.education.university %></h4>
+                <p><%= data.education.major %></p>
+                <p><%= data.education.period %></p>
+                <p><%= data.education.gpa %></p>
+            </div>
+            <div class="section">
+                <h3>Kỹ năng</h3>
+                <h4>Kỹ năng lập trình bổ trợ (cơ bản)</h4>
+                <ul>
+                    <% data.skills.basic.forEach(skill => { %>
+                        <li><%= skill %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1><%= data.name %></h1>
+                <h2><%= data.title %></h2>
+            </div>
+            <div class="section">
+                <h3>Mục tiêu nghề nghiệp</h3>
+                <p><%= data.careerObjective %></p>
+            </div>
+            <div class="section">
+                <h3>Các dự án tiêu biểu</h3>
+                <% data.workExperience.forEach(exp => { %>
+                    <div class="experience-item">
+                        <h4><%= exp.position %></h4>
+                        <h5><%= exp.company %> | <%= exp.period %></h5>
+                        <ul>
+                            <% exp.responsibilities.forEach(res => { %>
+                                <li><%= res %></li>
+                            <% }); %>
+                        </ul>
+                        <p><strong><%= exp.achievements %></strong></p>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

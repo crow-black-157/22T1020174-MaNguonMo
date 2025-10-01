@@ -1,0 +1,27 @@
+{
+  "name": "mycv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect ./server.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yui-master/MyCV_with_Nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yui-master/MyCV_with_Nodejs/issues"
+  },
+  "homepage": "https://github.com/Yui-master/MyCV_with_Nodejs#readme",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.10"
+  }
+}
